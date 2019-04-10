@@ -12,7 +12,7 @@ def invert(img):
 
 
 img_original = cv2.imread('mammography2.png')
-print_image(img_original)
+#print_image(img_original)
 
 image_invert = invert(img_original)
 print_image(image_invert)
