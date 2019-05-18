@@ -1,7 +1,7 @@
 %-----------  Exercício 1
 
 %Carrega a imagem
-img_ori = imread('Laboratorio_2_1.jpg');
+img_ori = imread('Images/Laboratorio_2_1.jpg');
 
 %Cria figure para imprimir para imprimir o exercício 1
 figure;
@@ -63,7 +63,7 @@ title('Imagem ajustada em [ ], [ ]');
 %----------- Exercício 3
 
 %Carrega a imagem
-img_ori = imread('Laboratorio_2_3.bmp');
+img_ori = imread('Images/Laboratorio_2_3.bmp');
 img_equ = histeq(img_ori);
 
 %Cria uma nova figura para imprimir
@@ -104,7 +104,7 @@ xlabel('Tons de cinza')
 %----------- Exercício 4
 
 %Carregando imagem
-g = imread('Laboratorio_2_3.bmp');
+g = imread('Images/Laboratorio_2_3.bmp');
 
 %Criando uma nova figura para imprimir
 figure;
