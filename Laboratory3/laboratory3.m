@@ -68,7 +68,7 @@ RGB = imread('Laboratorio_3_2.png');
 
 % Imprimindo as matrizes como imagem
 figure;
-imshow(X,map);
+subplot(1,1,1); imshow(X,map);
 
 % Aproximando as cores em 10 quantizações (Variância mínima entre as cores)
 % criando nova matriz de ponteiros e cores
@@ -76,7 +76,7 @@ imshow(X,map);
 
 % Imprimindo as novas matrizes como imagen
 figure;
-imshow(Y ,newmap);
+subplot(1,1,1); imshow(Y ,newmap);
 
 % Convertendo as matrizes de vetores e cores em imagem em escala de cinza
 GR = ind2gray(X,map); 
@@ -86,11 +86,11 @@ RGB2 = ind2rgb(X,map);
 
 % Imprimindo a imagem em escala de cinza
 figure;
-imshow(GR);
+subplot(1,1,1); imshow(GR);
 
 % Imprimindo a imagem RGB
 figure;
-imshow(RGB2);
+subplot(1,1,1); imshow(RGB2);
 
 % Converte a imagem RGM em uma matriz de ponteiros e cores 
 % quantizando 16 cores, e não utilizando o pontilhamento
@@ -106,19 +106,19 @@ G1 = dither(GR);
 
 % Imprimindo a imagem RGB
 figure;
-imshow(RGB);
+subplot(1,1,1); imshow(RGB);
 
 % Imprimindo as matrizes de ponteiros e cores com pontilhamento
 figure;
-imshow(X1,map1); 
+subplot(1,1,1); imshow(X1,map1); 
 
 % Imprimindo as matrizes de ponteiros e cores sem pontilhamento
 figure;
-imshow(X2,map2);
+subplot(1,1,1); imshow(X2,map2);
 
 % Imprimindo a imagem em escala de cinza com a resolução de cores aumentada
 figure;
-imshow(G1);
+subplot(1,1,1); imshow(G1);
 
 %--------------------------------------------
 % Exercício 4
@@ -192,7 +192,7 @@ RGB_filter = cat(3, R_filter, G_filter, B_filter);
 figure;
 imshow(RGB_filter);
 
-# Filtre a imagem RGB sem a separação dos canais, utilizando W
+% Filtre a imagem RGB sem a separação dos canais, utilizando W
 RGB_filter = imfilter(RGB, filter);
 
 figure;
