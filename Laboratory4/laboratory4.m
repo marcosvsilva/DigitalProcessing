@@ -387,3 +387,158 @@ img_title = 'Abertura quadrado 16';
 subplot(3,5,14); imshow(img_open); title(img_title);
 img_title = 'Fechamento quadrado 16';
 subplot(3,5,15); imshow(img_close); title(img_title);
+
+% Alterando o elemento estruturante para disco
+
+% Criando imagem do exercício 4 - Abertura e Fechamento Disco de 5 a 8
+title_figure = 'Exercicio 4 - Abertura e Fechamento Disco de 5 a 8';
+figure('NumberTitle', 'off', 'Name', title_figure);
+
+% Exibindo a imagem original
+subplot(3,5,[1 5]); imshow(img_ori); title('Imagem original');
+
+% 1- Elemento tipo Disco de tamanho 5
+structuring_element = strel('disk', 5);
+
+img_open = imopen(img_ori, structuring_element);
+img_close = imclose(img_ori, structuring_element);
+
+img_title = 'Abertura por Disco 5';
+subplot(3,5,6); imshow(img_open); title(img_title);
+img_title = 'Fechamento por Disco 5';
+subplot(3,5,7); imshow(img_close); title(img_title);
+
+% 2- Elemento tipo Disco de tamanho 6
+structuring_element = strel('disk', 6);
+
+img_open = imopen(img_ori, structuring_element);
+img_close = imclose(img_ori, structuring_element);
+
+img_title = 'Abertura Disco 6';
+subplot(3,5,9); imshow(img_open); title(img_title);
+img_title = 'Fechamento Disco 6';
+subplot(3,5,10); imshow(img_close); title(img_title);
+
+% 3- Elemento tipo Disco de tamanho 7
+structuring_element = strel('disk', 7);
+
+img_open = imopen(img_ori, structuring_element);
+img_close = imclose(img_ori, structuring_element);
+
+img_title = 'Abertura Disco 7';
+subplot(3,5,11); imshow(img_open); title(img_title);
+img_title = 'Fechamento Disco 7';
+subplot(3,5,12); imshow(img_close); title(img_title);
+
+% 4- Elemento tipo Disco de tamanho 8
+structuring_element = strel('disk', 8);
+
+img_open = imopen(img_ori, structuring_element);
+img_close = imclose(img_ori, structuring_element);
+
+img_title = 'Abertura Disco 8';
+subplot(3,5,14); imshow(img_open); title(img_title);
+img_title = 'Fechamento Disco 8';
+subplot(3,5,15); imshow(img_close); title(img_title);
+
+% Criando imagem do exercício 4 - Abertura e Fechamento Disco de 9 a 12
+title_figure = 'Exercicio 4 - Abertura e Fechamento Disco de 9 a 12';
+figure('NumberTitle', 'off', 'Name', title_figure);
+
+% Exibindo a imagem original
+subplot(3,5,[1 5]); imshow(img_ori); title('Imagem original');
+
+% 5- Elemento tipo Disco de tamanho 9
+structuring_element = strel('disk', 9);
+
+img_open = imopen(img_ori, structuring_element);
+img_close = imclose(img_ori, structuring_element);
+
+img_title = 'Abertura Disco 9';
+subplot(3,5,6); imshow(img_open); title(img_title);
+img_title = 'Fechamento Disco 9';
+subplot(3,5,7); imshow(img_close); title(img_title);
+
+% 6- Elemento tipo Disco de tamanho 10
+structuring_element = strel('disk', 10);
+
+img_open = imopen(img_ori, structuring_element);
+img_close = imclose(img_ori, structuring_element);
+
+img_title = 'Abertura Disco 10';
+subplot(3,5,9); imshow(img_open); title(img_title);
+img_title = 'Fechamento Disco 10';
+subplot(3,5,10); imshow(img_close); title(img_title);
+
+% 7- Elemento tipo Disco de tamanho 11
+structuring_element = strel('disk', 11);
+
+img_open = imopen(img_ori, structuring_element);
+img_close = imclose(img_ori, structuring_element);
+
+img_title = 'Abertura Disco 11';
+subplot(3,5,11); imshow(img_open); title(img_title);
+img_title = 'Fechamento Disco 11';
+subplot(3,5,12); imshow(img_close); title(img_title);
+
+% 8- Elemento tipo Disco de tamanho 12
+structuring_element = strel('disk', 12);
+
+img_open = imopen(img_ori, structuring_element);
+img_close = imclose(img_ori, structuring_element);
+
+img_title = 'Abertura Disco 12';
+subplot(3,5,14); imshow(img_open); title(img_title);
+img_title = 'Fechamento Disco 12';
+subplot(3,5,15); imshow(img_close); title(img_title);
+
+% Criando imagem do exercício 4 - Abertura e Fechamento Disco de 13 a 16
+title_figure = 'Exercicio 4 - Abertura e Fechamento Disco de 13 a 16';
+figure('NumberTitle', 'off', 'Name', title_figure);
+
+% Exibindo a imagem original
+subplot(3,5,[1 5]); imshow(img_ori); title('Imagem original');
+
+% 9- Elemento tipo Disco de tamanho 13
+structuring_element = strel('disk', 13);
+
+img_open = imopen(img_ori, structuring_element);
+img_close = imclose(img_ori, structuring_element);
+
+img_title = 'Abertura Disco 13';
+subplot(3,5,6); imshow(img_open); title(img_title);
+img_title = 'Fechamento Disco 13';
+subplot(3,5,7); imshow(img_close); title(img_title);
+
+% 10- Elemento tipo Disco de tamanho 14
+structuring_element = strel('disk', 14);
+
+img_open = imopen(img_ori, structuring_element);
+img_close = imclose(img_ori, structuring_element);
+
+img_title = 'Abertura Disco 14';
+subplot(3,5,9); imshow(img_open); title(img_title);
+img_title = 'Fechamento Disco 14';
+subplot(3,5,10); imshow(img_close); title(img_title);
+
+% 11- Elemento tipo Disco de tamanho 15
+structuring_element = strel('disk', 15);
+
+img_open = imopen(img_ori, structuring_element);
+img_close = imclose(img_ori, structuring_element);
+
+img_title = 'Abertura Disco 15';
+subplot(3,5,11); imshow(img_open); title(img_title);
+img_title = 'Fechamento Disco 15';
+subplot(3,5,12); imshow(img_close); title(img_title);
+
+% 11- Elemento tipo Disco de tamanho 16
+structuring_element = strel('disk', 16);
+
+img_open = imopen(img_ori, structuring_element);
+img_close = imclose(img_ori, structuring_element);
+
+img_title = 'Abertura Disco 16';
+subplot(3,5,14); imshow(img_open); title(img_title);
+img_title = 'Fechamento Disco 16';
+subplot(3,5,15); imshow(img_close); title(img_title);
