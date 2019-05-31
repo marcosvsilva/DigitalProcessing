@@ -595,3 +595,49 @@ subplot(2,5,10); imshow(img_close); title(img_title);
 % abertura da imagem com estrutura de quadrado e bastante ressaltadas 
 % com o fechamento em estrutura de quadrado, no entanto, não possui
 % resultados satisfatórios com os ruídos circulares ao centro da digital.
+
+%--------------------------------------------
+% Exercício 6
+%--------------------------------------------
+
+% Utilizando a imagem Laboratorio_4_6.tif, realizar as operações:
+
+% Lendo a imagem original
+img_ori = imread('Laboratorio_4_6.tif');
+
+% Criando imagem do exercício 5
+title_figure = 'Exercicio 6';
+figure('NumberTitle', 'off', 'Name', title_figure);
+
+% Exibindo a imagem original
+subplot(2,3,[1 3]); imshow(img_ori); title('Imagem original');
+
+% 1-Erodir por um elemento estruturante do tipo quadrado de tamanho 3
+structuring_element = strel('square', 3);
+
+img_erode = imerode(img_ori, structuring_element);
+
+img_title = 'Erosão por quadrado tamanho 3';
+subplot(2,3,4); imshow(img_erode); title(img_title);
+
+% 2-Dilatar por um elemento estruturante do tipo quadrado de tamanho 3
+structuring_element = strel('square', 3);
+
+img_dilate = imdilate(img_ori, structuring_element);
+
+img_title = 'Dilatação por quadrado tamanho 3';
+subplot(2,3,5); imshow(img_dilate); title(img_title);
+
+% 3-Exibir a subtração de b) – a) e explicar o resultado
+img_result = imsubtract(img_dilate, img_erode);
+
+img_title = 'Imagem resultante';
+subplot(2,3,6); imshow(img_result); title(img_title);
+
+% Comentário
+
+% Quando realizamos a erosão, retiramos muitos objetos com características
+% isoladas, e quando realizamos a dilatação, a mesma tem efeito contrário,
+% aumentando os evidenciando-se objetos de características similares, logo,
+% quando subtraímos uma imagem da outra evidenciamos a junção nas linhas de
+% contorno de regiões de interesse.
