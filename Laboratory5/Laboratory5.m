@@ -146,3 +146,51 @@ s1 = im2bw(f,T2);
 % (Adpatação para não criar várias imagens)
 % Plota a imagem resultante do thresold realizado manualmente
 subplot(1,3,3); imshow(s1); title('Imagem ');
+
+
+%--------------------------------------------
+% Exercício 4
+%--------------------------------------------
+
+% Utilize a imagem Laboratorio_5_4.bmp, para executar a função a seguir:
+% Explique cada uma das linhas da função e o resultado da execução.
+
+% Criando a figura para o exercício 4
+title_figure = 'Exercicio 4';
+figure('NumberTitle', 'off', 'Name', title_figure);
+
+% Testando a função Laboratorio_5_4b criada
+% lendo a imagem original
+img_orig = imread('Laboratorio_5_4.bmp');
+
+% Criando uma matriz com zeros do tamanho da imagem
+S = zeros(size(x));
+
+% Traçando um limiar
+T = 40;
+
+% Obtendo uma imagem de 8 bits a partir da imagem original
+g = uint8(Laboratorio_5_4b(img_orig, S, T));
+
+% Duplicando a imagem
+y = x;
+
+% Criando a imagem novamente em 3 canais
+xc(:,:,1)= x;
+xc(:,:,2)= x;
+xc(:,:,3)= x;
+
+% Atribindo os valores nos cais:
+% Canal varmelho
+y(g==1)=220;xc(:,:,1)=y;
+
+% Região crescente
+y(g==1)=0;xc(:,:,2)=y;
+
+% Sobreposição da original
+y(g==1)=0;xc(:,:,3)=y;
+
+% Imprimindo a imagem resultante da aplicação da imagem 
+% na função
+subplot(1,2,1); imshow(img_orig); title('Imagem original');
+subplot(1,2,2); imshow(xc); title('Imagem aplicada a função');
