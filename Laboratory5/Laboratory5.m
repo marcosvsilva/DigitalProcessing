@@ -37,3 +37,48 @@ subplot(1,2,2); imshow(img_filter); title('Imagem filtrada');
 % utilizados para realçar regiões de interesse da imagem e remover
 % bordas internas. Logo na aplicação desse filtro na imagem realizou
 % o realce na imagem dos 3 pontos em cor de brando na imagem.
+
+
+%--------------------------------------------
+% Exercício 2
+%--------------------------------------------
+
+% Explique cada linha do código abaixo aplicado na figura
+% Laboratorio_5_2.bmp:
+
+% Criando a figura para o exercício 2
+title_figure = 'Exercicio 2';
+figure('NumberTitle', 'off', 'Name', title_figure);
+
+% Lendo a imagem Laboratorio_5_2.bmp
+A = imread('Laboratorio_5_2.bmp');
+
+% Convertendo o limite global da imagem original em tons de cinza
+% para binário
+B = im2bw(A, graythresh(A));
+
+% Invertendo a imagem binária
+C = ~B;
+
+% Calculando e transformando a distância euclidiana da imagem binária
+D = bwdist(C);
+
+% Capturando as regiões de maior numero de pixels de luz como "bacias de
+% água"
+L = watershed(-D);
+
+% Captura regiões onde L possui valor 0
+w = L == 0;
+
+% Cria uma nova imagem onde da binária original atribuindo os valores de
+% da imagem binária ou da imagem de região de interesse com valor de L = 0
+g2 = B | w;
+
+% Imprimindo as etapas de todo processo
+subplot(3,3,1); imshow(A);
+subplot(3,3,2); imshow(B);
+subplot(3,3,3); imshow(C);
+subplot(3,3,4); imshow(D);
+subplot(3,3,5); imshow(L);
+subplot(3,3,6); imshow(2);
+subplot(3,3,[7, 9]); imshow(g2);
