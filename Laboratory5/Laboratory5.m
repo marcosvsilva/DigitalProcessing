@@ -53,8 +53,9 @@ figure('NumberTitle', 'off', 'Name', title_figure);
 % Lendo a imagem Laboratorio_5_2.bmp
 A = imread('Laboratorio_5_2.bmp');
 
-% Convertendo o limite global da imagem original em tons de cinza
-% para binário
+% Convertendo a imagem original para uma imagem binária utilizando o
+% limite global da imagem original em tons de cinza como fator de
+% luminância inferior
 B = im2bw(A, graythresh(A));
 
 % Invertendo a imagem binária
@@ -82,3 +83,66 @@ subplot(3,3,4); imshow(D);
 subplot(3,3,5); imshow(L);
 subplot(3,3,6); imshow(2);
 subplot(3,3,[7, 9]); imshow(g2);
+
+
+%--------------------------------------------
+% Exercício 3
+%--------------------------------------------
+
+% Explique cada linha do código abaixo aplicado na figura
+% Laboratorio_5_3.bmp:
+
+% Criando a figura para o exercício 3
+title_figure = 'Exercicio 3';
+figure('NumberTitle', 'off', 'Name', title_figure);
+
+% Lendo a imagem Laboratorio_5_3.bmp
+f = imread('Laboratorio_5_3.bmp');
+
+% Capturando o histograma da imagem original
+hf = imhist(f);
+
+% (Adpatação para não criar várias imagens)
+% Plota a imagem original
+subplot(1,3,1); imshow(f); title('Imagem original');
+
+% (Adpatação para não criar várias imagens)
+% Plota o histograma
+subplot(1,3,2); plot(hf); title('Histograma');
+
+% Calculando uma "limiar" T1 que recebe o valor mínimo da imagem original
+% e multiplica por meio e soma ao valor máximo da imagem original
+T1 = 0.5 * (double(min(f(:))) + double(max(f(:))));
+
+% Criando uma variável de controle para o laço de repetição
+done = false;
+
+% Laço de repetição
+while ~done
+    % Atribuindo a imagem g os valors de que são superiores ao limiar T1
+    g = f >= T1;
+    
+    % Obetendo um novo limiar a partir da nova imagem de 6 que contém
+    % agora a média de g multiplicado por 0.5 mais a imagem média da
+    % imagem inversa de g
+    T1next = 0.5 * (mean(f(g)) + mean(f(~g)));
+    
+    % Comparanando se a subtração absoluta de limiar T1 menos o novo
+    % limiar T1next é menor que 0.5, caso seja o laço o interrompido
+    done = abs(T1 - T1next) < 0.5;
+    
+    % Atribunido o novo limiar ao limiar antigo
+    T1 = T1next;
+end
+
+% Atribuindo a T2 a divisão de T1 por 255
+T2 = T1/255;
+
+% Convertendo a imagem original para uma imagem binária utilizando o
+% limite o limiar T2 calculado anteirormente como fator de luminância 
+% inferior
+s1 = im2bw(f,T2);
+
+% (Adpatação para não criar várias imagens)
+% Plota a imagem resultante do thresold realizado manualmente
+subplot(1,3,3); imshow(s1); title('Imagem ');
